@@ -55,6 +55,10 @@ input:focus {
   outline-color: gold;
 }
 
+label {
+  margin-bottom: 1rem;
+}
+
 @font-face {
   font-family: "Nunito";
   src: url("../fonts/Nunito/Nunito-Light.ttf") format("truetype");
