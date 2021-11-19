@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './App.scss'
 import ProfilePanel from '../components/ProfilePanel/ProfilePanel'
 import BodyDataContainer from '../components/BodyDataContainer/BodyDataContainer'
@@ -6,18 +6,14 @@ import ProportionsContainer from '../components/ProportionsContainer/Proportions
 import DataContext from '../context/data'
 
 const App = () => {
-  const [bodyData, setBodyData] = useState({})
-  const [proportions, setProportions] = useState({})
-  const [otherData, setOtherData] = useState({
-    sex: '',
+  const [bodyData, setBodyData] = useState(JSON.parse(localStorage.getItem('bodyData')) ?? {})
+  const [proportions, setProportions] = useState(JSON.parse(localStorage.getItem('proportions')) ?? {})
+  const [otherData, setOtherData] = useState(JSON.parse(localStorage.getItem('otherData')) ?? {
+    sex: 'М',
     height: 0,
     age: 0
   })
-  useEffect(() => {
-    setBodyData(JSON.parse(localStorage.getItem('bodyData')) ?? {})
-    setProportions(JSON.parse(localStorage.getItem('proportions')) ?? {})
-    setOtherData(JSON.parse(localStorage.getItem('otherData')) ?? {})
-  }, [])
+
   return (
     <DataContext.Provider value={{
       bodyData,
