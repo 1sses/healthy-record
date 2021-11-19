@@ -2,6 +2,7 @@ import React from 'react'
 import './App.scss'
 import ProfilePanel from '../components/ProfilePanel/ProfilePanel'
 import BodyDataContainer from '../components/BodyDataContainer/BodyDataContainer'
+import ProportionsContainer from '../components/ProportionsContainer/ProportionsContainer'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <ProfilePanel />
       </header>
       <BodyDataContainer />
+      <ProportionsContainer />
     </main>
   )
 }
