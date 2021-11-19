@@ -10,7 +10,9 @@ const ProportionsContainer = () => {
     <section className={style.wrapper}>
       <Form header="Пропорции тела">
         <div style={{ width: '14rem' }}>
-          <LabeledInput title="Дата" pattern="[0-3][0-9]\.[0-1][1-9]" len="5" required type="date" className={style.calendar} />
+          <LabeledInput
+            title="Дата" pattern="[0-3][0-9]\.[0-1][1-9]" len="5" required type="date" className={style.calendar}
+          />
           <LabeledInput title="Шея" pattern="\d{2}((\.|,)\d)?" len="4" measure=" см" required />
           <LabeledInput title="Бицепс" pattern="\d{2}((\.|,)\d)?" len="4" measure=" см" required />
           <LabeledInput title="Предплечье" pattern="\d{2}((\.|,)\d)?" len="4" measure=" см" required />
