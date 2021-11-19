@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 7rem;
+  margin-top: 4rem;
+  padding-left: 3rem;
+  border-left: 3px solid gold;
+  font-size: 1.3rem;
+
+  h2 {
+    margin-top: 1rem;
+    border-left: 0;
+    padding: 0;
+    color: dimgray;
+  }
+
+  .inputs {
+    margin-bottom: 1.5rem;
+
+    label {
+      margin-right: 2rem;
+    }
+  }
+}

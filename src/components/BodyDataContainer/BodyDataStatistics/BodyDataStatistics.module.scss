@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 50vw;
+  margin-left: 10rem;
+
+  .lastDataAligner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 0 1rem;
+
+    .otherDataInputs {
+      display: flex;
+      flex-direction: column;
+      width: 13rem;
+      padding: 10px;
+      border: 1px solid gold;
+      border-radius: 20px;
+
+      .rounded {
+        border-radius: 50%;
+        background: inherit;
+        border: 1px solid black;
+
+        &:hover, &:focus {
+          outline: 0;
+          border-color: gold;
+        }
+      }
+    }
+
+    .lastBodyData {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
