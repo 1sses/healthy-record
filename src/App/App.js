@@ -1,11 +1,11 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
 import ProfilePanel from '../components/ProfilePanel/ProfilePanel'
 
 const App = () => {
   return (
     <main>
-      <header>
+      <header className="header">
         <h1><em>Healthy Record</em> - учет характеристик организма</h1>
         <ProfilePanel />
       </header>
