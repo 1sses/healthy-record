@@ -12,7 +12,7 @@ export default function generateOptions (label, unit, subtitle) {
       },
       subtitle: {
         display: subtitle,
-        text: '',
+        text: subtitle,
         font: {
           family: 'Nunito'
         }

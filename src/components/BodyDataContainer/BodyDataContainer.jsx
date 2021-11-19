@@ -50,7 +50,6 @@ const BodyDataContainer = () => {
       // todo check appending bodyData
       // insertResultInputsDates()
       // updateResultsInfo()
-      // getProportionsColors()
     }
   }
   return (

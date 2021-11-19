@@ -29,7 +29,7 @@ const App = () => {
           <ProfilePanel />
         </header>
         <BodyDataContainer />
-        <ProportionsContainer />
+        {otherData.sex === 'М' && <ProportionsContainer/>}
       </main>
     </DataContext.Provider>
   )

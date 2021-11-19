@@ -60,8 +60,6 @@ const BodyDataStatistics = () => {
     const latest = bodyData[Object.keys(bodyData).pop()] ?? {}
     setLatest(latest)
     setStats(updateBodyData(latest, sex, height, age))
-    // todo check proportions colors update
-    // getProportionsColors()
   }, [bodyData, sex, height, age])
 
   return (

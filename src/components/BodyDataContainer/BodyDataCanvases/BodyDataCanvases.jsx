@@ -21,7 +21,7 @@ const BodyDataCanvases = () => {
       borderWidth: 3
     }]
   })
-  const chartClick = (data) => { // maybe working
+  const chartClick = (data) => {
     const index = data[0]?.index
     if (data.length) {
       setClickedIndex(index)
