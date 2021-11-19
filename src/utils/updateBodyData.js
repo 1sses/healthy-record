@@ -1,10 +1,10 @@
 import findInRange from './findInRange'
 
 export default function updateBodyData (latest, sex, height, age) {
-  const weight = latest?.weight ?? 0
-  const fat = latest?.fat ?? 0
-  const water = latest?.water ?? 0
-  const muscle = latest?.muscles ?? 0
+  const weight = latest.weight ?? 0
+  const fat = latest.fat ?? 0
+  const water = latest.water ?? 0
+  const muscle = latest.muscles ?? 0
 
   const bmi = weight / ((height / 100) ** 2)
   let bmiText, bmiColor

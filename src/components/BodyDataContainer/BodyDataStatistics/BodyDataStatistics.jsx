@@ -8,6 +8,7 @@ import updateBodyData from '../../../utils/updateBodyData'
 const BodyDataStatistics = () => {
   const { bodyData, otherData, setOtherData } = useContext(DataContext)
 
+  const [latest, setLatest] = useState({})
   const [stats, setStats] = useState({
     bmiText: '',
     bmiColor: '',
@@ -56,7 +57,8 @@ const BodyDataStatistics = () => {
   }, [otherData])
 
   useEffect(() => {
-    const latest = bodyData[Object.keys(bodyData).pop()]
+    const latest = bodyData[Object.keys(bodyData).pop()] ?? {}
+    setLatest(latest)
     setStats(updateBodyData(latest, sex, height, age))
     // todo check proportions colors update
     // getProportionsColors()
@@ -74,10 +76,10 @@ const BodyDataStatistics = () => {
           <LabeledInput title="Возраст" type="number" measure={` ${getAgeWord(age)}`} value={age} onChange={ageHandler} />
         </div>
         <div className={style.lastBodyData}>
-          <p>Вес: <strong>{76} кг</strong></p>
-          <p>Жировая ткань: <strong>{20.7}%</strong></p>
-          <p>Содержание воды: <strong>{58}%</strong></p>
-          <p>Мышечная ткань: <strong>{35}%</strong></p>
+          <p>Вес: <strong>{latest.weight ?? '-'} кг</strong></p>
+          <p>Жировая ткань: <strong>{latest.fat ?? '-'}%</strong></p>
+          <p>Содержание воды: <strong>{latest.water ?? '-'}%</strong></p>
+          <p>Мышечная ткань: <strong>{latest.muscles ?? '-'}%</strong></p>
         </div>
       </div>
       <div className={style.lastDataAligner}>

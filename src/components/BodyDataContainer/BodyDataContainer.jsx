@@ -40,15 +40,14 @@ const BodyDataContainer = () => {
         water: +water.replace(',', '.'),
         muscles: +muscles.replace(',', '.')
       }
-      setBodyData(sortData(bodyData))
-      localStorage.setItem('bodyData', JSON.stringify(bodyData))
+      const sortedData = sortData(bodyData)
+      setBodyData(sortedData)
+      localStorage.setItem('bodyData', JSON.stringify(sortedData))
       setWeight({ target: { value: '' } })
       setFat({ target: { value: '' } })
       setWater({ target: { value: '' } })
       setMuscles({ target: { value: '' } })
       // todo check appending bodyData
-      // updateBodyCharts()
-      // updateBodyData()
       // insertResultInputsDates()
       // updateResultsInfo()
       // getProportionsColors()
