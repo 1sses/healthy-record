@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  //justify-content: space-evenly;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+
+  .data {
+    .calendar {
+      input {
+        width: 9.6rem;
+      }
+    }
+  }
+}

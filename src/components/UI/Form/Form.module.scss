@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 3rem;
+  margin-left: 5rem;
+  border-left: 3px solid gold;
+
+  .header {
+    border-left: 0;
+    margin-top: 0;
+    padding: 0;
+    font-size: 2rem;
+    color: dimgray;
+  }
+}
