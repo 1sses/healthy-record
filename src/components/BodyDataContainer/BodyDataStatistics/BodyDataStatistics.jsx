@@ -66,7 +66,7 @@ const BodyDataStatistics = () => {
     <div className={style.wrapper}>
       <div className={style.lastDataAligner}>
         <div className={style.otherDataInputs}>
-          <label>
+          <label className={style.sexContainer}>
             Пол:
             <button className={style.rounded} onClick={switchSex}>{sex}</button>
           </label>

@@ -19,14 +19,19 @@
       border: 1px solid gold;
       border-radius: 20px;
 
-      .rounded {
-        border-radius: 50%;
-        background: inherit;
-        border: 1px solid black;
+      .sexContainer {
 
-        &:hover, &:focus {
-          outline: 0;
-          border-color: gold;
+        .rounded {
+          margin-left: 4rem;
+          font-size: 1.2rem;
+          border-radius: 50%;
+          background: inherit;
+          border: 1px solid black;
+
+          &:hover, &:focus {
+            outline: 0;
+            border-color: gold;
+          }
         }
       }
     }
