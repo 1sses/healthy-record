@@ -54,7 +54,7 @@ const BodyDataCanvases = () => {
         />
         <Line
           getElementAtEvent={chartClick} type="line"
-          data={generateData('tomato', 'muscle')} options={generateOptions('Мышцы, %', '%')}
+          data={generateData('tomato', 'muscles')} options={generateOptions('Мышцы, %', '%')}
         />
       </div>
     </div>
