@@ -1,0 +1,47 @@
+.wrapper {
+
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+  }
+
+  .synchronize {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .sync {
+      font-size: 2.5rem;
+      animation-name: rotation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-play-state: paused;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform:rotate(0deg);
+      }
+      100% {
+        transform:rotate(360deg);
+      }
+    }
+
+    .animation {
+      animation-play-state: running;
+    }
+  }
+
+  .controllers {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}

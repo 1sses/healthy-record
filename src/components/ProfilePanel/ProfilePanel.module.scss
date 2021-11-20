@@ -1,5 +1,5 @@
 .wrapper {
-  display: inline-flex;
+  display: flex;
   align-items: flex-start;
   margin-top: 0.4rem;
 
@@ -17,8 +17,34 @@
   }
 
   .info {
-    padding: 2px 7px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
     border: 4px solid gold;
     border-radius: 50%;
   }
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.switcher {
+  border: 3px solid gold;
+  border-radius: 7px;
+}
+
+.close {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  padding: 0.3rem;
 }

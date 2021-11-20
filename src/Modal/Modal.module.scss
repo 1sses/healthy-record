@@ -9,7 +9,7 @@
   align-items: center;
 
   backdrop-filter: blur(5px);
-  transform: translateY(-100vh);
+  transform: translateY(-50vh);
   z-index: -10;
   opacity: 0;
   transition: transform .3s ease-out, z-index 0s linear, all .3s ease-out;
@@ -19,10 +19,20 @@
     flex-direction: column;
     padding: 1rem 0.5rem;
     border-radius: 10px;
-    width: 80vw;
-    height: 80vh;
-    background: whitesmoke;
+    width: 65vw;
+    height: 70vh;
+    background: transparent;
+    overflow-y: scroll;
     cursor: auto;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: gold;
+      border-radius: 10px;
+    }
   }
 }
 

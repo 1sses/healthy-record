@@ -1,0 +1,45 @@
+.wrapper {
+
+  .window {
+    display: flex;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+    }
+
+    .switcher {
+      border: 3px solid gold;
+      border-radius: 7px;
+    }
+
+    .submit {
+      width: 310px;
+      height: 40px;
+      margin: 0.6rem;
+      border: 2px solid gold;
+      background: transparent;
+      font-family: Nunito, sans-serif;
+      font-size: 1.2rem;
+      transition: background-color 0.2s ease;
+
+      &:hover, &:focus {
+        background: gold;
+      }
+    }
+  }
+}
