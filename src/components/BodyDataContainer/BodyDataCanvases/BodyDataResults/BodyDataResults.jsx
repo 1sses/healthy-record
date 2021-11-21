@@ -24,6 +24,10 @@ const BodyDataResults = () => {
   }
 
   useEffect(() => {
+    insertDates()
+  }, [])
+
+  useEffect(() => {
     if (Object.keys(bodyData).length === 0 || !fromDate || !toDate) {
       setContent(false)
       return
