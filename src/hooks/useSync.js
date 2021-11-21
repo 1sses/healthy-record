@@ -8,8 +8,7 @@ export default function useSync () {
   const [status, setStatus] = useState('не выполнена')
   // color: tomato, gold, green
   const [color, setColor] = useState('tomato')
-  const sync = async (shouldUpdate) => {
-    const { bodyData, proportions, otherData } = useContext(DataContext)
+  const sync = async (shouldUpdate, bodyData, proportions, otherData) => {
     const config = {
       method: 'post',
       url: serverConfig.syncURL,

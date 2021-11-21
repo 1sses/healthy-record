@@ -8,6 +8,7 @@ import useInput from '../../../hooks/useInput'
 import serverConfig from '../../../api/server.config'
 import axios from 'axios'
 import SyncContext from '../../../context/sync'
+import DataContext from '../../../context/data'
 
 const Account = () => {
   const [authTypeLogin, setAuthTypeLogin] = useState(true)
@@ -17,6 +18,19 @@ const Account = () => {
 
   const switchAuth = () => setAuthTypeLogin(!authTypeLogin)
   const server = useContext(SyncContext)
+  const { setBodyData, setProportions, setOtherData } = useContext(DataContext)
+
+  const initSuccess = (res) => {
+    setPublicLogin(res.login)
+    setBodyData(JSON.parse(res.bodyData))
+    localStorage.setItem('bodyData', res.bodyData)
+    setProportions(JSON.parse(res.proportions))
+    localStorage.setItem('proportions', res.proportions)
+    setOtherData(JSON.parse(res.otherData))
+    localStorage.setItem('otherData', res.otherData)
+    server.setStatus('не требуется')
+    server.setColor('green')
+  }
 
   useEffect(async () => {
     const config = {
@@ -30,9 +44,7 @@ const Account = () => {
     }
     const response = await axios(config)
     if (!response.data.error) {
-      setPublicLogin(response.data.login)
-      server.setStatus('не требуется')
-      server.setColor('green')
+      initSuccess(response.data)
     }
   }, [])
 
@@ -65,9 +77,7 @@ const Account = () => {
     }
     const response = await axios(config)
     if (!response.data.error) {
-      setPublicLogin(response.data.login)
-      server.setStatus('не требуется')
-      server.setColor('green')
+      initSuccess(response.data)
       alert(response.data.message)
     } else {
       alert(response.data.error)

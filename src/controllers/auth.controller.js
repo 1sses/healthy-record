@@ -6,7 +6,12 @@ class AuthController {
   static async validation (ctx) {
     const { userId } = ctx.request
     const user = await UserRepository.searchUserById(userId)
-    ctx.body = { login: user.login }
+    ctx.body = {
+      login: user.login,
+      bodyData: user.bodyData,
+      proportions: user.proportions,
+      otherData: user.otherData
+    }
   }
 
   static async registration (ctx) {
@@ -33,7 +38,13 @@ class AuthController {
     } else {
       throw Error('Неверный логин или пароль!')
     }
-    ctx.body = { message: 'Вход выполнен успешно!', login }
+    ctx.body = {
+      message: 'Вход выполнен успешно!',
+      login,
+      bodyData: user.bodyData,
+      proportions: user.proportions,
+      otherData: user.otherData
+    }
   }
 
   static async logout (ctx) {

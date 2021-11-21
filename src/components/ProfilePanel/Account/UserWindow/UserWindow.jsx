@@ -2,16 +2,25 @@ import React, { useContext, useRef, useState } from 'react'
 import style from './UserWindow.module.scss'
 import DataContext from '../../../../context/data'
 import classNames from 'classnames'
+import SyncContext from '../../../../context/sync'
+import { JSON } from 'sequelize'
 
 const UserWindow = ({ login }) => {
   const anchor = useRef()
   const file = useRef()
 
   const { bodyData, setBodyData, proportions, setProportions, otherData, setOtherData } = useContext(DataContext)
+  const server = useContext(SyncContext)
 
   const [updating, setUpdating] = useState(false)
-  const synchronize = () => {
-    setUpdating(!updating)
+  const synchronize = async () => {
+    if (server.status === 'не выполнена') {
+      alert('Войдите, чтобы синхронизировать данные!')
+      return
+    }
+    setUpdating(true)
+    await server.sync(JSON.stringify(bodyData), JSON.stringify(proportions), JSON.stringify(otherData))
+    setUpdating(false)
   }
 
   const download = () => {
@@ -68,7 +77,7 @@ const UserWindow = ({ login }) => {
         <h2>Пользователь:</h2>
         <p>Логин: {login}</p>
         <div className={style.synchronize}>
-          <p>Синхронизация: не требуется</p>
+          <p>Синхронизация: <span style={{ color: server.color }}>{server.status}</span></p>
           <button className={syncStyles} title="Синхронизировать" onClick={synchronize}><i className="fas fa-sync-alt" /></button>
         </div>
       </div>
