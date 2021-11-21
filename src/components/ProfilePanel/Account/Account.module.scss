@@ -9,6 +9,7 @@
 
     p {
       font-size: 1.5rem;
+      margin: 0.5rem 0;
     }
 
     .btn {
@@ -48,6 +49,18 @@
       .pass {
         top: 1.5rem;
         right: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    .window {
+      flex-direction: column;
+      .form {
+        width: 90%;
+        padding-left: 1rem;
       }
     }
   }
