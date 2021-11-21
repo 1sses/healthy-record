@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import style from './Account.module.scss'
 import Form from '../../UI/Form/Form'
 import Input from '../../UI/Input'
@@ -7,6 +7,7 @@ import UserWindow from './UserWindow/UserWindow'
 import useInput from '../../../hooks/useInput'
 import serverConfig from '../../../api/server.config'
 import axios from 'axios'
+import SyncContext from '../../../context/sync'
 
 const Account = () => {
   const [authTypeLogin, setAuthTypeLogin] = useState(true)
@@ -15,6 +16,7 @@ const Account = () => {
   const [publicLogin, setPublicLogin] = useState('Вход не выполнен')
 
   const switchAuth = () => setAuthTypeLogin(!authTypeLogin)
+  const server = useContext(SyncContext)
 
   useEffect(async () => {
     const config = {
@@ -27,7 +29,11 @@ const Account = () => {
       }
     }
     const response = await axios(config)
-    if (!response.data.error) setPublicLogin(response.data.login)
+    if (!response.data.error) {
+      setPublicLogin(response.data.login)
+      server.setStatus('не требуется')
+      server.setColor('green')
+    }
   }, [])
 
   const registerUser = async (e) => {
@@ -38,6 +44,8 @@ const Account = () => {
     })
     if (!response.data.error) {
       setPublicLogin(response.data.login)
+      server.setStatus('не требуется')
+      server.setColor('green')
       alert(response.data.message)
     } else {
       alert(response.data.error)
@@ -58,6 +66,8 @@ const Account = () => {
     const response = await axios(config)
     if (!response.data.error) {
       setPublicLogin(response.data.login)
+      server.setStatus('не требуется')
+      server.setColor('green')
       alert(response.data.message)
     } else {
       alert(response.data.error)

@@ -4,7 +4,9 @@ const settings = {
   validateURL: `${baseURL}/validate`,
   registrationURL: `${baseURL}/registration`,
   loginURL: `${baseURL}/login`,
-  logoutURL: `${baseURL}/logout`
+  logoutURL: `${baseURL}/logout`,
+  syncURL: `${baseURL}/sync`,
+  resetURL: `${baseURL}/reset`
 }
 
 export default settings

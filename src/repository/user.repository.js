@@ -22,6 +22,19 @@ class UserRepository {
     const result = await User.findOne({ where: { id } })
     return result?.dataValues
   }
+
+  static async synchronize (id, bodyData, proportions, otherData) {
+    return await User.update({ bodyData, proportions, otherData }, { where: { id } })
+  }
+
+  static async reset (id) {
+    return await User.update({
+      bodyData: JSON.stringify({}),
+      proportions: JSON.stringify({}),
+      otherData: JSON.stringify({ sex: 'М', height: 0, age: 0 })
+    },
+    { where: { id } })
+  }
 }
 
 module.exports = {
