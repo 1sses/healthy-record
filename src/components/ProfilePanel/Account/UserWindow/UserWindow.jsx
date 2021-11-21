@@ -121,7 +121,7 @@ const UserWindow = ({ login }) => {
   return (
     <div className={style.wrapper}>
       <div>
-        <h2>Пользователь:</h2>
+        <h2 className={style.header}>Пользователь:</h2>
         <p>Логин: {login}</p>
         <div className={style.synchronize}>
           <p>Синхронизация: <span style={{ color: server.color }}>{server.status}</span></p>

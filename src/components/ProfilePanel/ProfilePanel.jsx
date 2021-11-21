@@ -42,20 +42,21 @@ const ProfilePanel = () => {
     <>
       <Modal visible={modal} setVisible={setModal}>
         {modalContent === 'profile'
-          ? <Account />
+          ? <Account/>
           : <article>
             <button className={`${style.btn} ${style.switcher}`} title="Переключиться" onClick={switchInfo}>
               <i className="fas fa-chevron-left"/></button>
-            {modalContent === 'info' ? <Info /> : <Tables />}
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Button text="Закрыть" onClick={closeModal} className={style.close} />
-            </div>
+            {modalContent === 'info' ? <Info/> : <Tables/>}
           </article>}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button text="Закрыть" onClick={closeModal} className={style.close}/>
+        </div>
       </Modal>
       <div className={style.wrapper}>
-      <button className={`${style.account} ${style[server.color]}`} title="Аккаунт" onClick={accountClick}><i className="far fa-address-card" /></button>
-      <button className={style.info} title="Информация" onClick={infoClick}><i className="fas fa-bars" /></button>
-    </div>
+        <button className={`${style.account} ${style[server.color]}`} title="Аккаунт" onClick={accountClick}><i
+          className="far fa-address-card"/></button>
+        <button className={style.info} title="Информация" onClick={infoClick}><i className="fas fa-bars"/></button>
+      </div>
     </>
   )
 }
