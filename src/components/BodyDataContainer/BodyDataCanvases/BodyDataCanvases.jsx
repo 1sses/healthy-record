@@ -41,7 +41,7 @@ const BodyDataCanvases = () => {
           getElementAtEvent={chartClick} type="line"
           data={generateData('#55E9BC', 'weight')} options={generateOptions('Вес, кг', ' кг')}
         />
-        <BodyDataResults />
+        <BodyDataResults/>
       </div>
       <div className={style.right}>
         <Line

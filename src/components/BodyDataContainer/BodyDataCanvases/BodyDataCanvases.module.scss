@@ -9,3 +9,12 @@
     width: 40vw;
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    .left, .right {
+      width: 95vw;
+    }
+  }
+}

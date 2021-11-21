@@ -13,3 +13,9 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .data {
+    flex-direction: column-reverse;
+  }
+}

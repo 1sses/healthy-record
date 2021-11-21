@@ -5,3 +5,9 @@
 .wideContainer {
   width: 45vw;
 }
+
+@media (max-width: 768px) {
+  .smallContainer, .wideContainer {
+    width: 95vw;
+  }
+}

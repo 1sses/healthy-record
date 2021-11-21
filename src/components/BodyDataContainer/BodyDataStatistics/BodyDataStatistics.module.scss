@@ -42,3 +42,15 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    width: 90vw;
+    margin-left: 0;
+
+    .lastDataAligner {
+      margin-right: 0;
+    }
+  }
+}

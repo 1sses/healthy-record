@@ -47,9 +47,6 @@ const BodyDataContainer = () => {
       setFat({ target: { value: '' } })
       setWater({ target: { value: '' } })
       setMuscles({ target: { value: '' } })
-      // todo check appending bodyData
-      // insertResultInputsDates()
-      // updateResultsInfo()
     }
   }
   return (
@@ -59,7 +56,7 @@ const BodyDataContainer = () => {
           <div style={{ width: '14rem' }}>
             <LabeledInput
               title="Дата" pattern="[0-3][0-9]\.[0-1][1-9]" len="5" className={style.calendar} required type="date"
-                          value={date} onChange={setDate}
+              value={date} onChange={setDate}
             />
             <LabeledInput title="Вес" pattern="\d{2,3}((\.|,)\d)?" len="5" required measure=" кг"
                           value={weight} onChange={setWeight}
@@ -74,7 +71,7 @@ const BodyDataContainer = () => {
                           value={muscles} onChange={setMuscles}
             />
           </div>
-          <Button text="Ввести" />
+          <Button text="Ввести"/>
         </Form>
         <BodyDataStatistics/>
       </section>

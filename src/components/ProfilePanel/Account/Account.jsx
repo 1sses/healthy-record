@@ -90,12 +90,12 @@ const Account = () => {
       <div className={style.window}>
         <UserWindow login={publicLogin} />
         {authTypeLogin
-          ? <Form header="Авторизация">
+          ? <Form header="Авторизация" className={style.form}>
             <Input type="text" placeholder="Логин" required onChange={setLogin} />
             <Password placeholder="Пароль" required eyeStyle={style.pass} onChange={setPassword} />
             <button className={style.submit} onClick={loginUser}>Войти</button>
           </Form>
-          : <Form header="Регистрация">
+          : <Form header="Регистрация" className={style.form}>
             <Input type="text" placeholder="Логин" onChange={setLogin} />
             <Password placeholder="Пароль" required eyeStyle={style.pass} onChange={setPassword} />
             <button className={style.submit} onClick={registerUser}>Зарегистрироваться</button>

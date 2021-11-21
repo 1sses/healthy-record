@@ -60,7 +60,7 @@ const UserWindow = ({ login }) => {
     }
   }
   useEffect(() => {
-    if (server.autoSync) server.setIntervalId(setInterval(sync, 3000))
+    if (server.autoSync) server.setIntervalId(setInterval(sync, 1000))
     else clearInterval(server.intervalId)
   }, [server.autoSync])
 
@@ -129,7 +129,7 @@ const UserWindow = ({ login }) => {
         </div>
         <div className={style.synchronize}>
           <p>Автоинхронизация: </p>
-          <button className={style.btn} title="Автосинхронизация" onClick={toggleAutoSync}>
+          <button className={`${style.btn} ${style.auto}`} title="Автосинхронизация" onClick={toggleAutoSync}>
             {server.autoSync
               ? <i style={{ color: 'green' }} className="fas fa-toggle-on" />
               : <i style={{ color: 'tomato' }} className="fas fa-toggle-off" />}

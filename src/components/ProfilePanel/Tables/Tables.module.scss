@@ -33,3 +33,13 @@
     border: 1px solid gold;
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    align-items: flex-start;
+    overflow-x: scroll;
+    .header {
+      margin-top: 0;
+    }
+  }
+}

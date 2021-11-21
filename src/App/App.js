@@ -26,11 +26,11 @@ const App = () => {
       setOtherData
     }}>
       <SyncContext.Provider value={useSync()}>
+        <header className="header">
+          <h1><em>Healthy Record</em> - учет характеристик организма</h1>
+          <ProfilePanel/>
+        </header>
         <main>
-          <header className="header">
-            <h1><em>Healthy Record</em> - учет характеристик организма</h1>
-            <ProfilePanel/>
-          </header>
           <BodyDataContainer/>
           {otherData.sex === 'М' && <ProportionsContainer/>}
         </main>

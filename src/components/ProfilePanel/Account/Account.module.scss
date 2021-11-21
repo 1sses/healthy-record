@@ -27,24 +27,28 @@
       border-radius: 7px;
     }
 
-    .submit {
-      width: 310px;
-      height: 40px;
-      margin: 0.6rem;
-      border: 2px solid gold;
-      background: transparent;
-      font-family: Nunito, sans-serif;
-      font-size: 1.2rem;
-      transition: background-color 0.2s ease;
+    .form {
+      width: 33%;
 
-      &:hover, &:focus {
-        background: gold;
+      .submit {
+        width: 310px;
+        height: 40px;
+        margin: 0.6rem;
+        border: 2px solid gold;
+        background: transparent;
+        font-family: Nunito, sans-serif;
+        font-size: 1.2rem;
+        transition: background-color 0.2s ease;
+
+        &:hover, &:focus {
+          background: gold;
+        }
       }
-    }
 
-    .pass {
-      top: 1.5rem;
-      right: 1rem;
+      .pass {
+        top: 1.5rem;
+        right: 1rem;
+      }
     }
   }
 }

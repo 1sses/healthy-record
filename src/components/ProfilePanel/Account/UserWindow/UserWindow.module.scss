@@ -1,4 +1,5 @@
 .wrapper {
+  width: 42%;
 
   .btn {
     display: inline-flex;
@@ -36,6 +37,10 @@
 
     .animation {
       animation-play-state: running;
+    }
+
+    .auto {
+      font-size: 2rem;
     }
   }
 

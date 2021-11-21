@@ -49,3 +49,12 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .modalOut {
+    .modal {
+      width: 90vw;
+      height: 90vh;
+    }
+  }
+}

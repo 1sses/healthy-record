@@ -8,3 +8,11 @@
     font-size: 1.3rem;
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    .header {
+      margin-top: 0;
+    }
+  }
+}

@@ -24,3 +24,15 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin-left: 0;
+    margin-top: 2rem;
+    padding-left: 2rem;
+    .inputs {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
