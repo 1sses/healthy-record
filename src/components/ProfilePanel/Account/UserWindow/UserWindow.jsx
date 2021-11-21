@@ -3,7 +3,7 @@ import style from './UserWindow.module.scss'
 import DataContext from '../../../../context/data'
 import classNames from 'classnames'
 
-const UserWindow = () => {
+const UserWindow = ({ login }) => {
   const anchor = useRef()
   const file = useRef()
 
@@ -66,7 +66,7 @@ const UserWindow = () => {
     <div className={style.wrapper}>
       <div>
         <h2>Пользователь:</h2>
-        <p>Email: vlad.zholonkovskiy@outlook.com</p>
+        <p>Логин: {login}</p>
         <div className={style.synchronize}>
           <p>Синхронизация: не требуется</p>
           <button className={syncStyles} title="Синхронизировать" onClick={synchronize}><i className="fas fa-sync-alt" /></button>
