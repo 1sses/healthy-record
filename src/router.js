@@ -11,6 +11,5 @@ router.post('/login', AuthController.login)
 router.post('/logout', AuthController.logout)
 
 router.post('/sync', tokenValidation, DataController.synchronize)
-router.get('/reset', tokenValidation, DataController.reset)
 
 module.exports = router

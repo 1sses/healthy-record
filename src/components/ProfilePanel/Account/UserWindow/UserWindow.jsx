@@ -1,9 +1,10 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import style from './UserWindow.module.scss'
 import DataContext from '../../../../context/data'
 import classNames from 'classnames'
 import SyncContext from '../../../../context/sync'
-import { JSON } from 'sequelize'
+import serverConfig from '../../../../api/server.config'
+import axios from 'axios'
 
 const UserWindow = ({ login }) => {
   const anchor = useRef()
@@ -19,8 +20,54 @@ const UserWindow = ({ login }) => {
       return
     }
     setUpdating(true)
-    await server.sync(JSON.stringify(bodyData), JSON.stringify(proportions), JSON.stringify(otherData))
+    await sync()
     setUpdating(false)
+  }
+  const sync = async () => {
+    let bodyDataCurrent, proportionsCurrent, otherDataCurrent, colorCurrent
+    setBodyData(value => {
+      bodyDataCurrent = value
+      return value
+    })
+    setProportions(value => {
+      proportionsCurrent = value
+      return value
+    })
+    setOtherData(value => {
+      otherDataCurrent = value
+      return value
+    })
+    server.setColor(value => {
+      colorCurrent = value
+      return value
+    })
+    if (colorCurrent === 'gold') {
+      const config = {
+        method: 'post',
+        url: serverConfig.syncURL,
+        data: {
+          bodyData: JSON.stringify(bodyDataCurrent),
+          proportions: JSON.stringify(proportionsCurrent),
+          otherData: JSON.stringify(otherDataCurrent)
+        },
+        withCredentials: true
+      }
+      const response = await axios(config)
+      if (!response.data.error) {
+        server.setStatus('не требуется')
+        server.setColor('green')
+      }
+    }
+  }
+  useEffect(() => {
+    if (server.autoSync) server.setIntervalId(setInterval(sync, 3000))
+    else clearInterval(server.intervalId)
+  }, [server.autoSync])
+
+  const toggleAutoSync = () => {
+    if (server.autoSync) localStorage.removeItem('autoSync')
+    else localStorage.setItem('autoSync', (!server.autoSync).toString())
+    server.setAutoSync(!server.autoSync)
   }
 
   const download = () => {
@@ -79,6 +126,14 @@ const UserWindow = ({ login }) => {
         <div className={style.synchronize}>
           <p>Синхронизация: <span style={{ color: server.color }}>{server.status}</span></p>
           <button className={syncStyles} title="Синхронизировать" onClick={synchronize}><i className="fas fa-sync-alt" /></button>
+        </div>
+        <div className={style.synchronize}>
+          <p>Автоинхронизация: </p>
+          <button className={style.btn} title="Автосинхронизация" onClick={toggleAutoSync}>
+            {server.autoSync
+              ? <i style={{ color: 'green' }} className="fas fa-toggle-on" />
+              : <i style={{ color: 'tomato' }} className="fas fa-toggle-off" />}
+          </button>
         </div>
       </div>
       <div className={style.controllers}>

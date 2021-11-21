@@ -29,13 +29,14 @@ const App = () => {
         <main>
           <header className="header">
             <h1><em>Healthy Record</em> - учет характеристик организма</h1>
-            <ProfilePanel />
+            <ProfilePanel/>
           </header>
-          <BodyDataContainer />
+          <BodyDataContainer/>
           {otherData.sex === 'М' && <ProportionsContainer/>}
         </main>
       </SyncContext.Provider>
     </DataContext.Provider>
+
   )
 }
 

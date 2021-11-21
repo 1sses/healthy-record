@@ -17,12 +17,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     bodyData: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       defaultValue: JSON.stringify({})
     },
     proportions: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       defaultValue: JSON.stringify({})
     },
